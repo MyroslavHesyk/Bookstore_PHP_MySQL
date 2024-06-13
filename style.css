@@ -187,3 +187,59 @@ main {
     font-size: 1.1rem;
     margin-bottom: 1rem;
 }
+
+@media (max-width: 768px) {
+    header h1.logo {
+        font-size: 2rem;
+    }
+
+    nav ul li {
+        margin: 0 0.5rem;
+    }
+
+    .sort-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sort-options a,
+    .sort-options button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .books-list {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .section-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    header h1.logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .sort-options input[type="text"] {
+        margin-bottom: 0.5rem;
+    }
+
+    .books-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .section-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
