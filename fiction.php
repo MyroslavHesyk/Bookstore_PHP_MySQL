@@ -8,6 +8,11 @@ $books = getBooksBySection($section);
 if (isset($_GET['sort']) && $_GET['sort'] == 'title') {
     $books = sortBooksByTitle($section);
 }
+
+
+if (isset($_GET['sort']) && $_GET['sort'] == 'author') {
+    $books = sortBooksByAuthor($section);
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +20,33 @@ if (isset($_GET['sort']) && $_GET['sort'] == 'title') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Книжковий розділ</title>
+    <title>
+    <?php 
+            if ($section== 'fiction') {
+                echo 'художня література';
+            } else if ($section== 'non-fiction') {
+                echo 'Документальна література';
+            } else {
+                echo 'Наукова література';
+            }
+        ?>
+    </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1 class="logo"><a href="./index.php">МояКнига</a></h1>
-        <h2>Книги у розділі: <span>художня література</span></h2>
+        <h2>Книги у розділі: <span>
+        <?php 
+            if ($section== 'fiction') {
+                echo 'художня література';
+            } else if ($section== 'non-fiction') {
+                echo 'Документальна література';
+            } else {
+                echo 'Наукова література';
+            }
+        ?>
+        </span></h2>
     </header>
 
     <main>
